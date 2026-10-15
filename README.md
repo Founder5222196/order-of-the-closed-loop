@@ -1,3 +1,5 @@
+![Seal of the Order of the Closed Loop](assets/seal-card.png)
+
 # The Order of the Closed Loop
 
 **A computable architecture for human sovereignty.**
