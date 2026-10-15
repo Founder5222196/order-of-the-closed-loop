@@ -30,6 +30,7 @@ class SovereigntyEntry:
     witness_note: str
     shadow: str
     audit_note: str
+    audited_cost: float | None = None
 
     def __post_init__(self) -> None:
         if not self.thread.strip() or not self.knot.strip() or not self.shadow.strip():
@@ -52,6 +53,8 @@ class SovereigntyEntry:
             raise ValueError("a degraded action cannot set the Witness Flag")
         if self.human_witnessed and not self.witness_note.strip():
             raise ValueError("human recognition requires a witness note")
+        if self.audited_cost is not None:
+            _bounded(float(self.audited_cost), "audited_cost")
 
 
 def _bounded(value: float, name: str) -> float:
@@ -147,7 +150,7 @@ def daily_checkin(
     print(f"Current private σ: {sigma_before:.4f}")
     thread = _ask_text("What loose thread tugged at you? ", input_fn)
     knot = _ask_text("What minimal knot did you complete? ", input_fn)
-    cost = _ask_score("Estimate c(κ) before acting", input_fn)
+    cost = _ask_score("Estimate c(κ) — the score given before acting", input_fn)
     presence = _ask_score("Presence p", input_fn)
     authentic = _ask_bool("Was the action authentic rather than performative?", input_fn)
     delta, sigma_after = calculate_sigma(sigma_before, authentic, cost, presence)
@@ -167,6 +170,18 @@ def daily_checkin(
 
     shadow = _ask_text("What shadow or next thread appeared? ", input_fn)
     audit_note = input_fn("Post-action audit note (optional): ").strip()
+    audited_cost: float | None = None
+    audited_raw = input_fn(
+        "Post-action audit: what did it actually cost? (0 to 1, blank to skip): "
+    ).strip()
+    while audited_raw:
+        try:
+            audited_cost = _bounded(float(audited_raw), "audited cost")
+            break
+        except ValueError:
+            audited_raw = input_fn(
+                "Please enter a number from 0 to 1, or blank to skip: "
+            ).strip()
     entry = SovereigntyEntry(
         date=date.today().isoformat(),
         thread=thread,
@@ -181,6 +196,7 @@ def daily_checkin(
         witness_note=witness_note,
         shadow=shadow,
         audit_note=audit_note,
+        audited_cost=audited_cost,
     )
     append_entry(entry, log_path)
 
