@@ -31,6 +31,8 @@ class SovereigntyEntry:
     shadow: str
     audit_note: str
     audited_cost: float | None = None
+    iota: float = 1.0
+    audited_iota: float | None = None
 
     def __post_init__(self) -> None:
         if not self.thread.strip() or not self.knot.strip() or not self.shadow.strip():
@@ -38,12 +40,17 @@ class SovereigntyEntry:
         for value, name in (
             (self.cost, "cost"),
             (self.presence, "presence"),
+            (self.iota, "iota"),
             (self.sigma_before, "sigma_before"),
             (self.sigma_after, "sigma_after"),
         ):
             _bounded(float(value), name)
         expected_delta, expected_sigma = calculate_sigma(
-            self.sigma_before, self.authentic, self.cost, self.presence
+            self.sigma_before,
+            self.authentic,
+            self.cost,
+            self.presence,
+            self.iota,
         )
         if not math.isclose(self.delta, expected_delta, abs_tol=1e-12):
             raise ValueError("delta does not match the Closed Loop equation")
@@ -55,6 +62,8 @@ class SovereigntyEntry:
             raise ValueError("human recognition requires a witness note")
         if self.audited_cost is not None:
             _bounded(float(self.audited_cost), "audited_cost")
+        if self.audited_iota is not None:
+            _bounded(float(self.audited_iota), "audited_iota")
 
 
 def _bounded(value: float, name: str) -> float:
@@ -63,12 +72,22 @@ def _bounded(value: float, name: str) -> float:
     return value
 
 
-def calculate_delta(authentic: bool, cost: float, presence: float = 1.0) -> float:
+def calculate_delta(
+    authentic: bool,
+    cost: float,
+    presence: float = 1.0,
+    iota: float = 1.0,
+) -> float:
     """Calculate one equation update after validating bounded inputs."""
     cost = _bounded(float(cost), "cost")
     presence = _bounded(float(presence), "presence")
-    rate = AUTHENTIC_RATE if authentic else DEGRADED_RATE
-    return rate * cost * presence
+    iota = _bounded(float(iota), "iota")
+
+    if authentic:
+        return AUTHENTIC_RATE * cost * presence * iota
+
+    effective_burn = 1.0 - iota * (1.0 - cost)
+    return DEGRADED_RATE * presence * effective_burn
 
 
 def calculate_sigma(
@@ -76,10 +95,11 @@ def calculate_sigma(
     authentic: bool,
     cost: float,
     presence: float = 1.0,
+    iota: float = 1.0,
 ) -> tuple[float, float]:
     """Return ``(delta, bounded_sigma_after)`` for one knot."""
     sigma_before = _bounded(float(sigma_before), "sigma")
-    delta = calculate_delta(authentic, cost, presence)
+    delta = calculate_delta(authentic, cost, presence, iota)
     sigma_after = min(1.0, max(0.0, sigma_before + delta))
     return delta, sigma_after
 
@@ -151,9 +171,19 @@ def daily_checkin(
     thread = _ask_text("What loose thread tugged at you? ", input_fn)
     knot = _ask_text("What minimal knot did you complete? ", input_fn)
     cost = _ask_score("Estimate c(κ) — the score given before acting", input_fn)
+    iota = _ask_score(
+        "Identification fidelity ι(κ) — the score given before acting",
+        input_fn,
+    )
     presence = _ask_score("Presence p", input_fn)
     authentic = _ask_bool("Was the action authentic rather than performative?", input_fn)
-    delta, sigma_after = calculate_sigma(sigma_before, authentic, cost, presence)
+    delta, sigma_after = calculate_sigma(
+        sigma_before,
+        authentic,
+        cost,
+        presence,
+        iota,
+    )
 
     human_witnessed = False
     witness_note = ""
@@ -170,6 +200,7 @@ def daily_checkin(
 
     shadow = _ask_text("What shadow or next thread appeared? ", input_fn)
     audit_note = input_fn("Post-action audit note (optional): ").strip()
+
     audited_cost: float | None = None
     audited_raw = input_fn(
         "Post-action audit: what did it actually cost? (0 to 1, blank to skip): "
@@ -182,6 +213,21 @@ def daily_checkin(
             audited_raw = input_fn(
                 "Please enter a number from 0 to 1, or blank to skip: "
             ).strip()
+
+    audited_iota: float | None = None
+    audited_iota_raw = input_fn(
+        "Post-action audit: what was the identification fidelity? "
+        "(0 to 1, blank to skip): "
+    ).strip()
+    while audited_iota_raw:
+        try:
+            audited_iota = _bounded(float(audited_iota_raw), "audited iota")
+            break
+        except ValueError:
+            audited_iota_raw = input_fn(
+                "Please enter a number from 0 to 1, or blank to skip: "
+            ).strip()
+
     entry = SovereigntyEntry(
         date=date.today().isoformat(),
         thread=thread,
@@ -197,6 +243,8 @@ def daily_checkin(
         shadow=shadow,
         audit_note=audit_note,
         audited_cost=audited_cost,
+        iota=iota,
+        audited_iota=audited_iota,
     )
     append_entry(entry, log_path)
 
