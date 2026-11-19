@@ -1,4 +1,12 @@
-"""Private sovereignty journal for the Closed Loop Protocol."""
+"""Private sovereignty journal for the Closed Loop Protocol.
+
+Within the custody premise, sovereignty (σ) here denotes
+stewardship-integrity within an entrusted sphere — freedom from alien
+authorship in the exercise of legitimately entrusted agency, measured by
+the alignment between discerned obligation and outward action — not
+ultimate self-ownership. σ = 1 denotes saturation within the declared
+scope of the present loop, not metaphysical completion of the person.
+"""
 
 from __future__ import annotations
 

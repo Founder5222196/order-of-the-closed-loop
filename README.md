@@ -19,7 +19,7 @@
 
 Where:
 
-- **σ** — sovereignty: the private, bounded estimate of alignment between inner truth and outward action (`0 ≤ σ ≤ 1`).
+- **σ** — sovereignty: within the custody premise, stewardship-integrity within an entrusted sphere — the private, bounded estimate of alignment between discerned obligation and outward action (`0 ≤ σ ≤ 1`). σ does not denote ultimate self-ownership, and `σ = 1` denotes saturation within the declared scope of the present loop, not metaphysical completion of the person. See *Metric Reconciliation* under The Closing Condition.
 - **κ** — the minimal knot: the smallest candidate action that would close a loose thread. Whether a knot is authentic or degraded is its classification, judged when it is taken — not assumed when it is chosen.
 - **c(κ)** — anticipated cost or burn of the knot, scored before acting (`0 ≤ c(κ) ≤ 1`).
 - **p** — presence during the action (`0 ≤ p ≤ 1`). Use `1` when the optional presence extension is not being tracked.
@@ -43,6 +43,91 @@ The asymmetric rates are intentional: repeated performative, fearful, or numb co
 3. **Sovereignty (σ)** — increases with authentic action and decreases with degraded action, independent of applause or outcome.
 4. **Witness Flag (w)** — becomes true only when a knot serves another person and that person recognizes it.
 5. **Shadow** — the next thread revealed by a closed knot.
+
+## The Closing Condition
+
+### Metric Reconciliation
+
+Within the custody premise, sovereignty (σ) does not denote ultimate self-ownership. It denotes stewardship-integrity within an entrusted sphere: freedom from alien authorship in the exercise of legitimately entrusted agency, measured by the alignment between discerned obligation and outward action. The existing update rates and halt condition are unchanged, but authenticity and degradation are evaluated relative to this bounded meaning of sovereignty. A value of σ = 1 denotes saturation within the declared scope of the present loop, not metaphysical completion of the person.
+
+### Closing Condition
+
+A loop is CLOSED only when its scope, eligibility, decision rule, evidence sources, ordinary review rule, and admissible classes of defeater were fixed before the relevant outcome or supplied by a case-independent rule; ordinary review has ended under a named case-independent terminal rule; the evidence necessary to audit the result remains recoverable; and an append-only Attestation has been issued against that evidence.
+
+Before ordinary review ends, the file may contain predictions, actions, evaluations, pending judgments, or provisional findings, but it may not contain an Attestation. Prediction freezes at its declared boundary; Action becomes historical by occurrence; Evaluation may iterate during ordinary review; Attestation is the terminal step and may issue only after ordinary review terminates.
+
+A later change may reopen a CLOSED file only when an admissible defeater occurs. A defeater must be materially capable of changing the original verdict under the original rule, objectively verifiable, symmetric as to favorable and unfavorable outcomes, and independent of the result in the present case. Reopening creates a new append-only Attestation and preserves the prior one.
+
+If no case-independent terminal rule exists for ordinary review, the file remains OPEN.
+
+### Scope Integrity
+
+The scope of a loop may not be narrowed after the outcome in order to obtain closure. A post-outcome change of scope does not revise the original loop; it creates a new loop with its own prediction, evidence rule, evaluation, and Attestation.
+
+Evidence concerning one domain may not be attested as establishing a claim in another. Filing experiential evidence as doctrinal evidence, a single-run result as a replication claim, or a provisional finding as a final Attestation is a scope error. “Scope substitution” names this error; it is not a stage in the loop.
+
+### Monitoring and Extraordinary Defeaters
+
+Closure creates no general duty of perpetual surveillance. Reopenability is not permanent review. A CLOSED Attestation is final under the evidence, scope, trust boundary, and ordinary-review rule fixed for that file.
+
+An extraordinary defeater reopens the file when it enters the declared evidence boundary through a recognized channel or is otherwise later discovered. Absence of active monitoring does not invalidate historical closure.
+
+Where a claim purports to remain continuously current rather than historically settled, any required monitoring horizon and signal channel must be declared before closure; otherwise that claim is not eligible for unmonitored closure.
+
+### Legitimacy
+
+Precommitment does not create legitimacy. It constrains authority already entrusted.
+
+Every loop must identify the antecedent source of the entrusted responsibility to judge and act within its scope.
+
+Under the custody premise, personal legitimacy does not arise from ownership of the self. It arises from stewardship over decisions and actions entrusted to the person’s custody, subject to the duties and limits of that stewardship.
+
+No participant may enlarge that entrusted scope merely by declaring himself legitimate. The system may test whether a claimed source of legitimacy is antecedent and scope-consistent; procedure alone cannot prove the truth of an underlying metaphysical claim of delegation.
+
+Where no antecedent source of entrusted legitimacy can be identified, the legitimacy seat remains OPEN and the loop may record evidence and judgment but may not claim full closure.
+
+### Trust-Boundary Ratification
+
+A builder may propose and declare a trust boundary but cannot legitimate it by declaration alone. The judgment seat proposes the boundary; the evidence seat records and preserves the actual custody, control, dependency, and failure relationships on which it rests; the legitimacy seat ratifies whether that boundary is authorized and sufficient for the declared scope.
+
+A declaration of total self-trust does not cure an architecture in which the builder can undetectably alter rules, evidence, archives, or adverse determinations, or prevent contrary evidence from surviving.
+
+A trust boundary counts as ratified only when the external authority or settlement mechanism capable of defeating closure acts under a case-independent mandate or settlement rule not created or materially controlled by the builder for that file; has no material dependency or conflict giving the builder leverage over its judgment; cannot be removed, replaced, rerun, bypassed, or selectively ignored because of an adverse ruling; and can issue an adverse determination that the builder cannot override.
+
+“Cannot be removed, replaced, rerun, bypassed, selectively ignored, or overridden” describes a structural property of the authority governing that file, not the builder’s voluntary restraint. A promise by the builder not to exercise an available power of substitution, rerun, suppression, or override does not ratify the boundary.
+
+The adverse determination must be preserved in a durable record not solely mutable by the builder—either the authority’s own retained record or an independently timestamped or append-only anchor—such that the fact and content of the ruling remain recoverable even if the builder alters or deletes the local archive.
+
+Voluntary ex-ante selection from a menu of external authorities does not by itself defeat ratification. Once the file is opened under the selected authority and rule, the builder may not change the authority or settlement rule for that file in response to the outcome. A broader claim concerning practice-level performance constitutes a separate file and must declare its own case-independent authority-selection and aggregation rule.
+
+A trust boundary is defeated by materially verifiable evidence that its declared control relationships, independence assumptions, custodial authority, settlement rule, or evidence-preservation capacities were false or incomplete.
+
+Where any of these conditions is absent, the legitimacy seat remains OPEN and full closure is unavailable.
+
+### Archival Sufficiency
+
+Append-only custody need not reside in a literally immutable origin repository. Independent public copies, content-addressed hashes, forks, signed releases, or third-party archives satisfy the preservation requirement when they make prior rules, evidence manifests, adverse determinations, and Attestations recoverable and make silent alteration detectable.
+
+A mutable origin controlled by the builder does not satisfy this requirement by itself.
+
+Closure is conditional on a declared trust boundary. The architecture must permit contrary evidence to produce and preserve a result against the builder’s prior judgment. No architecture can guarantee this against a sole custodian willing and able to falsify rules, evidence, or archives undetectably; where such undetectable unilateral control remains, full closure is unavailable.
+
+### Constitutional Axiom and Jurisdiction
+
+The custody premise is a constitutional axiom outside the adjudicative jurisdiction of the Closed Loop. The procedure neither proves nor attests the metaphysical truth of divine delegation. Conclusions that depend on custody are conditional upon that premise.
+
+An axiom becomes a shrine if the system presents it as a conclusion established by its own procedure, uses the procedure to self-confirm it, or suppresses alternative premises as though they had been procedurally falsified.
+
+### Betting Terminal Rule
+
+For sportsbook settlement loops, ordinary review ends 48 hours after the designated sportsbook marks the wager SETTLED and the underlying event is officially final, unless before that deadline the sportsbook or governing competition announces a pending regrade, void review, score correction, or settlement dispute.
+
+In that event the file remains OPEN until that identified review reaches final disposition.
+
+A material correction first arising after closure is an extraordinary defeater: it reopens the file, produces a new Attestation, and preserves the prior one.
+
+The 48-hour boundary is an ex-ante governance rule, not a claim that truth itself expires after 48 hours.
+
 
 ## Action Identification and Narration
 
