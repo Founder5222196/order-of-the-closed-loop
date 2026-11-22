@@ -77,11 +77,15 @@ A later change may reopen a CLOSED file only when an admissible defeater occurs.
 
 If no case-independent terminal rule exists for ordinary review, the file remains OPEN.
 
+A finding can carry forward into later decisions where its evidence remains relevant. [Attestation Integrity](ATTESTATION-INTEGRITY.md#5-carry-forward)
+
 ### Scope Integrity
 
 The scope of a loop may not be narrowed after the outcome in order to obtain closure. A post-outcome change of scope does not revise the original loop; it creates a new loop with its own prediction, evidence rule, evaluation, and Attestation.
 
 Evidence concerning one domain may not be attested as establishing a claim in another. Filing experiential evidence as doctrinal evidence, a single-run result as a replication claim, or a provisional finding as a final Attestation is a scope error. “Scope substitution” names this error; it is not a stage in the loop.
+
+Behavioral Attestation is limited to what observable conduct supports. Hidden belief, intention, admiration, and motive require independent evidence. Keep motive UNKNOWN where that evidence is absent. [Attestation Integrity](ATTESTATION-INTEGRITY.md#behavioral-attestation)
 
 ### Monitoring and Extraordinary Defeaters
 
@@ -382,6 +386,7 @@ These probes confirm that a conversation was given the calibration text. They do
 | --- | --- |
 | `mirror-prompt.txt` | Copyable reflective protocol for an AI conversation |
 | [`RRE.md`](RRE.md) | Protocol for testing whether a correction changes subsequent behavior |
+| [`ATTESTATION-INTEGRITY.md`](ATTESTATION-INTEGRITY.md) | Doctrine on Behavioral Attestation and carried revision |
 | `tracker.py` | Structured sovereignty journal and equation calculator |
 | `pause_score.py` | Validated Pause Score journal and recent-entry review |
 | `tests/` | Standard-library automated tests |
