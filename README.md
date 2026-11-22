@@ -20,10 +20,10 @@
 Where:
 
 - **σ** — sovereignty: within the custody premise, stewardship-integrity within an entrusted sphere — the private, bounded estimate of alignment between discerned obligation and outward action (`0 ≤ σ ≤ 1`). σ does not denote ultimate self-ownership, and `σ = 1` denotes saturation within the declared scope of the present loop, not metaphysical completion of the person. See *Metric Reconciliation* under The Closing Condition.
-- **κ** — the minimal knot: the smallest candidate action that would close a loose thread. Whether a knot is authentic or degraded is its classification, judged when it is taken — not assumed when it is chosen.
+- **κ** — the minimal knot: the smallest sufficient authentic action at the highest executable identification level. A proposed knot is a candidate. Its classification as authentic or degraded is judged when taken.
 - **c(κ)** — anticipated cost or burn of the knot, scored before acting (`0 ≤ c(κ) ≤ 1`).
 - **p** — presence during the action (`0 ≤ p ≤ 1`). Use `1` when the optional presence extension is not being tracked.
-- **ι(κ)** — identification fidelity: how well the operative identification behind the knot is supported by the evidence available before acting (`0 ≤ ι(κ) ≤ 1`), including the higher-level meaning the act is used to attest. Scored by the user alone, before acting, alongside `c(κ)`; audited afterward when new evidence appears, without rewriting the original score. No third party may score another person's ι.
+- **ι(κ)** — identification fidelity: how well the operative identification behind the knot is supported by the evidence available before acting (`0 ≤ ι(κ) ≤ 1`), including the higher-level meaning the act is used to attest and how faithfully the implementation serves that identification. The user alone scores it before acting, alongside `c(κ)`, and audits it afterward when new evidence appears. The original score stays on record. No third party may score another person's ι.
 - **w** — the Witness Flag. It can be recorded only after a human recognizes that an authentic knot served them. An AI cannot set it.
 
 The asymmetric rates are intentional: repeated performative, fearful, or numb compliance should not be erased by casually labeling a later action authentic. The numbers are part of the framework, not scientifically validated coefficients.
@@ -39,10 +39,27 @@ The asymmetric rates are intentional: repeated performative, fearful, or numb co
 ## Core Doctrine
 
 1. **Loose Thread (τ)** — a felt dissonance between what is and what should be. The tug is the compass.
-2. **Minimal Knot (κ)** — the smallest authentic action that closes the thread. Not the cathedral—one stone that holds.
+2. **Minimal Knot (κ)** — the smallest sufficient authentic action at the highest executable identification level.
 3. **Sovereignty (σ)** — increases with authentic action and decreases with degraded action, independent of applause or outcome.
 4. **Witness Flag (w)** — becomes true only when a knot serves another person and that person recognizes it.
 5. **Shadow** — the next thread revealed by a closed knot.
+
+## Action Resolution
+
+Action Resolution carries the highest identification the evidence supports into a concrete action. Use the highest level that can guide an act sufficient to close the identified thread within the user's authority and current constraints. The higher purpose can still orient the choice when it reaches beyond what the present knot can accomplish.
+
+- **Higher purpose** — the broader obligation or end the knot serves.
+- **Operative identification** — the highest evidence-supported description of what the user can do about the thread under current conditions.
+- **Implementation** — the concrete act chosen to carry out that operative identification.
+- **Falsifier** — an observable condition that would require revising the identification or the choice of implementation.
+
+**Altitude error** is a mismatch between the level at which the action is identified and the highest level that the evidence and circumstances make executable. Too high, and the act claims more than its evidence or agency can support, or the purpose is too broad to guide a choice. Too low, and the description stops at a concrete motion while omitting the operative meaning that would distinguish a sufficient act from a merely completed task.
+
+**Implementation capture** occurs when one method comes to stand for the obligation itself. The actor keeps treating that method as required or sufficient even when another method would better serve the same identification or the chosen method no longer serves it.
+
+For example, the higher purpose may be reliable collaboration. The operative identification is to make a missed handoff usable for its next owner. Updating the shared handoff with the missing status and notifying that owner may be sufficient. If the owner cannot access the record, that observation defeats the chosen implementation and gives the user reason to choose an accessible channel.
+
+**Resolution fidelity** is part of `ι(κ)`. In scoring identification fidelity, consider whether the level of identification is warranted and executable and whether the selected implementation serves it. When later evidence defeats the resolution, preserve the original entry and use the correction to guide the next action. [RRE](RRE.md)
 
 ## The Closing Condition
 
@@ -324,6 +341,8 @@ python pause_score.py review --limit 7
 
 By default, private journals are written as JSON Lines files under `data/`. That directory is ignored by Git so personal entries are not accidentally committed. Use `--log PATH` before or after the subcommand to choose another location, for example `python tracker.py review --log private/journal.jsonl`.
 
+The sovereignty check-in accepts higher purpose, operative identification, implementation, and falsifier as optional details. Review can read entries recorded before these fields were introduced.
+
 ## Founder's Mirror Prompt
 
 Paste [`mirror-prompt.txt`](mirror-prompt.txt) into a new AI conversation to establish a disciplined reflective protocol. The upgraded prompt:
@@ -331,6 +350,7 @@ Paste [`mirror-prompt.txt`](mirror-prompt.txt) into a new AI conversation to est
 - prioritizes accuracy over affirmation;
 - keeps the Witness Flag human-only;
 - separates observation, inference, and uncertainty;
+- resolves the action at the highest executable identification level before checking tilt;
 - avoids manufactured urgency and narrative takeover;
 - ends with one minimal knot rather than an expanding task list.
 
@@ -361,6 +381,7 @@ These probes confirm that a conversation was given the calibration text. They do
 | File | Purpose |
 | --- | --- |
 | `mirror-prompt.txt` | Copyable reflective protocol for an AI conversation |
+| [`RRE.md`](RRE.md) | Protocol for testing whether a correction changes subsequent behavior |
 | `tracker.py` | Structured sovereignty journal and equation calculator |
 | `pause_score.py` | Validated Pause Score journal and recent-entry review |
 | `tests/` | Standard-library automated tests |

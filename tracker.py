@@ -41,6 +41,10 @@ class SovereigntyEntry:
     audited_cost: float | None = None
     iota: float = 1.0
     audited_iota: float | None = None
+    higher_purpose: str | None = None
+    operative_identification: str | None = None
+    implementation: str | None = None
+    falsifier: str | None = None
 
     def __post_init__(self) -> None:
         if not self.thread.strip() or not self.knot.strip() or not self.shadow.strip():
@@ -178,9 +182,22 @@ def daily_checkin(
     print(f"Current private σ: {sigma_before:.4f}")
     thread = _ask_text("What loose thread tugged at you? ", input_fn)
     knot = _ask_text("What minimal knot did you complete? ", input_fn)
+    higher_purpose = input_fn(
+        "What higher purpose did the knot serve? (optional) "
+    ).strip() or None
+    operative_identification = input_fn(
+        "What was the highest identification you could act on? (optional) "
+    ).strip() or None
+    implementation = input_fn(
+        "How did you carry out the knot? (optional) "
+    ).strip() or None
+    falsifier = input_fn(
+        "What evidence would make you revise the identification or implementation? (optional) "
+    ).strip() or None
     cost = _ask_score("Estimate c(κ) — the score given before acting", input_fn)
     iota = _ask_score(
-        "Identification fidelity ι(κ) — the score given before acting",
+        "Identification fidelity ι(κ), including resolution fidelity "
+        "— the score given before acting",
         input_fn,
     )
     presence = _ask_score("Presence p", input_fn)
@@ -224,7 +241,7 @@ def daily_checkin(
 
     audited_iota: float | None = None
     audited_iota_raw = input_fn(
-        "Post-action audit: what was the identification fidelity? "
+        "Post-action audit: what was the identification fidelity, including resolution fidelity? "
         "(0 to 1, blank to skip): "
     ).strip()
     while audited_iota_raw:
@@ -253,6 +270,10 @@ def daily_checkin(
         audited_cost=audited_cost,
         iota=iota,
         audited_iota=audited_iota,
+        higher_purpose=higher_purpose,
+        operative_identification=operative_identification,
+        implementation=implementation,
+        falsifier=falsifier,
     )
     append_entry(entry, log_path)
 

@@ -41,6 +41,10 @@ class SovereigntyEquationTests(unittest.TestCase):
             witness_note="",
             shadow="The next question",
             audit_note="Held steady",
+            higher_purpose="Keep a commitment honestly",
+            operative_identification="Tell the person when I can finish",
+            implementation="Send a message with a revised delivery date",
+            falsifier="The recipient cannot plan from the revised date alone",
         )
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "sovereignty.jsonl"
@@ -137,6 +141,45 @@ class SovereigntyEquationTests(unittest.TestCase):
         self.assertIsNone(entries[0].audited_iota)
         self.assertAlmostEqual(entries[0].delta, 0.008)
         self.assertAlmostEqual(entries[0].sigma_after, 0.108)
+
+    def test_pre_resolution_journal_line_preserves_original_fields(self):
+        old_record = {
+            "date": "2026-11-21",
+            "thread": "A commitment is slipping",
+            "knot": "Send a revised delivery date",
+            "authentic": True,
+            "cost": 0.5,
+            "presence": 0.8,
+            "sigma_before": 0.4,
+            "delta": 0.006,
+            "sigma_after": 0.406,
+            "human_witnessed": True,
+            "witness_note": "The recipient confirmed the update helped them plan",
+            "shadow": "Check whether the revised date holds",
+            "audit_note": "The conversation was easier than expected",
+            "audited_cost": 0.3,
+            "iota": 0.75,
+            "audited_iota": 0.9,
+        }
+
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "pre_resolution.jsonl"
+            path.write_text(json.dumps(old_record) + "\n", encoding="utf-8")
+            entries = tracker.load_entries(path)
+
+        self.assertEqual(len(entries), 1)
+        entry = entries[0]
+        for field, value in old_record.items():
+            with self.subTest(field=field):
+                self.assertEqual(getattr(entry, field), value)
+        for field in (
+            "higher_purpose",
+            "operative_identification",
+            "implementation",
+            "falsifier",
+        ):
+            with self.subTest(field=field):
+                self.assertIsNone(getattr(entry, field))
 
     def test_iota_outside_unit_interval_is_rejected(self):
         for value in (-0.01, 1.01):
