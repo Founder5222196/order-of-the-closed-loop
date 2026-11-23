@@ -50,6 +50,10 @@ Examples may include:
 
 A single ambiguous act is normally insufficient.
 
+Behavioral Attestation requires an evaluator to state a reproducible comparison rule and evidentiary basis, using relevant base rates, the actor's feasible options and constraints, documented decision rules, or comparable conduct, and to establish that the observed pattern is materially more expected under the actor's operative reliance on the claimed property than under the explicit lower file and evidence-supported alternative explanations considered individually and in plausible combination; a demonstrated nondiscriminating pattern returns NO, insufficient comparative evidence or a comparably supported alternative returns UNRESOLVED, and only a materially supported differential returns YES.
+
+Costly conduct is candidate discriminating evidence only where feasible, materially less costly alternatives are established and the actor's cost-sensitive choice remains materially better explained by operative reliance on the claimed property after specific tests of policy, case-independent precaution, asymmetric downside, habit, delegation constraints, and uncertainty; cost by itself neither establishes the claimed property nor supplies the evaluator's comparative-evidence basis.
+
 ### Explicit Attestation
 
 **Explicit Attestation** is the durable account a person or system actually grants through words, records, credit, permissions, role assignment, trust, standing, or other explicit treatment.
@@ -143,11 +147,9 @@ A correction is not fully installed merely because it appears in one evaluation.
 
 **Carry Forward** is the persistence of a justified update into later decisions for which that update remains relevant.
 
-The sequence is therefore:
+The adjudication sequence ends with Attestation (Prediction → Action → Evaluation → Attestation); Carry Forward names the subsequent application of that closed finding in later decisions, not a fifth stage of the original adjudication.
 
-```text
-Prediction → Action → Evaluation → Attestation → Carry Forward
-```
+Carry Forward consists of considering an available closed finding when a later decision independently arises and the finding remains relevant under that decision's governing rule; it is not a stage of the original adjudication and creates no independent duty to search indefinitely for later decisions or monitor the closed file continuously.
 
 Carry Forward does not freeze a person into a permanent reputation.
 
@@ -159,11 +161,13 @@ The rule is:
 
 > **Do not reset without a defeater. Do not preserve without evidence.**
 
+A later decision that disregards a closed finding still relevant and applicable under its own governing rule, whether favorable or adverse, is evidence for a new file concerning that decision, not an invalidation, diminution, or reopening of the original Attestation; the finding's downstream weight may change for independently justified reasons, while reopening the original requires an admissible defeater under its original rule.
+
 ---
 
 ## 6. Operative Attestation
 
-An Attestation may be **archival** or **operative**.
+The downstream effect of a valid Attestation may be archival-only or operative; these are descriptions of subsequent treatment of the finding, not separate grades of the Attestation's completeness or validity.
 
 ### Archival Attestation
 

@@ -20,10 +20,10 @@
 Where:
 
 - **σ** — sovereignty: within the custody premise, stewardship-integrity within an entrusted sphere — the private, bounded estimate of alignment between discerned obligation and outward action (`0 ≤ σ ≤ 1`). σ does not denote ultimate self-ownership, and `σ = 1` denotes saturation within the declared scope of the present loop, not metaphysical completion of the person. See *Metric Reconciliation* under The Closing Condition.
-- **κ** — the minimal knot: the smallest sufficient authentic action at the highest executable identification level. A proposed knot is a candidate. Its classification as authentic or degraded is judged when taken.
+- **κ** — the minimal knot: a proposed minimal-knot action selected before acting as the smallest action reasonably expected to close the identified thread at the highest identification level both honestly supported by available evidence and executable within the user's authority and current constraints; once taken, it is classified authentic or degraded regardless of whether its expected sufficiency is later confirmed.
 - **c(κ)** — anticipated cost or burn of the knot, scored before acting (`0 ≤ c(κ) ≤ 1`).
 - **p** — presence during the action (`0 ≤ p ≤ 1`). Use `1` when the optional presence extension is not being tracked.
-- **ι(κ)** — identification fidelity: how well the operative identification behind the knot is supported by the evidence available before acting (`0 ≤ ι(κ) ≤ 1`), including the higher-level meaning the act is used to attest and how faithfully the implementation serves that identification. The user alone scores it before acting, alongside `c(κ)`, and audits it afterward when new evidence appears. The original score stays on record. No third party may score another person's ι.
+- **ι(κ)** — identification fidelity: how well the operative identification behind the knot is supported by the evidence available before acting (`0 ≤ ι(κ) ≤ 1`), including the higher-level meaning the act is used to attest and resolution fidelity as specified under Action Resolution. The user alone scores it before acting, alongside `c(κ)`, and audits it afterward when new evidence appears. The original score stays on record. No third party may score another person's ι.
 - **w** — the Witness Flag. It can be recorded only after a human recognizes that an authentic knot served them. An AI cannot set it.
 
 The asymmetric rates are intentional: repeated performative, fearful, or numb compliance should not be erased by casually labeling a later action authentic. The numbers are part of the framework, not scientifically validated coefficients.
@@ -39,7 +39,7 @@ The asymmetric rates are intentional: repeated performative, fearful, or numb co
 ## Core Doctrine
 
 1. **Loose Thread (τ)** — a felt dissonance between what is and what should be. The tug is the compass.
-2. **Minimal Knot (κ)** — the smallest sufficient authentic action at the highest executable identification level.
+2. **Minimal Knot (κ)** — the smallest action reasonably expected before acting to close the identified thread at the highest identification level both honestly supported by evidence and executable within the user's authority and current constraints, with authenticity or degradation judged when the action is taken.
 3. **Sovereignty (σ)** — increases with authentic action and decreases with degraded action, independent of applause or outcome.
 4. **Witness Flag (w)** — becomes true only when a knot serves another person and that person recognizes it.
 5. **Shadow** — the next thread revealed by a closed knot.
@@ -59,7 +59,7 @@ Action Resolution carries the highest identification the evidence supports into 
 
 For example, the higher purpose may be reliable collaboration. The operative identification is to make a missed handoff usable for its next owner. Updating the shared handoff with the missing status and notifying that owner may be sufficient. If the owner cannot access the record, that observation defeats the chosen implementation and gives the user reason to choose an accessible channel.
 
-**Resolution fidelity** is part of `ι(κ)`. In scoring identification fidelity, consider whether the level of identification is warranted and executable and whether the selected implementation serves it. When later evidence defeats the resolution, preserve the original entry and use the correction to guide the next action. [RRE](RRE.md)
+Resolution fidelity enters ι(κ) only as the user's evidence-supported pre-action estimate of whether the selected implementation is fit to serve the operative identification; subsequent evidence of implementation failure belongs in the post-action audit without rewriting the original score, and neither a low ι nor implementation failure alone determines whether the action is authentic or degraded. When later evidence defeats the resolution, preserve the original entry and use the correction to guide the next action. [RRE](RRE.md)
 
 ## The Closing Condition
 
