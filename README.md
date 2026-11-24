@@ -4,9 +4,19 @@
 
 **A computable architecture for human sovereignty.**
 
-> Release status: `v1.0.0-rc.1` is the first public release candidate. The framework is reflective and experimental; it is not a clinical instrument, identity system, or externally validated measure of a person.
+> Release status: `rc.4` is the latest certified release. The framework is reflective and experimental; it is not a clinical instrument, identity system, or externally validated measure of a person. Framing changes on `main` do not amend certified doctrine unless they are separately stress-tested and released.
 
-**Version note (rc.2 working draft):** this tree is the in-progress rc.2 revision line. It is built directly on `main` as it stood after the post-rc.1 hardening merge and keeps the tagged `v1.0.0-rc.1` release untouched as provenance. Nothing in the rc.2 draft changes rc.1; it clarifies labels, reconciles the documents with each other, and states the framework's distribution ethic explicitly.
+## Why this exists
+
+The Order of the Closed Loop addresses a general update problem: people and systems often have to act under uncertainty, but the models used to justify action can outlive the evidence that originally supported them.
+
+> **A system capable of acting under uncertainty must also be capable of revising itself after reality answers. Otherwise temporary models become permanent environments.**
+
+The project therefore treats post-action reconciliation as a first-class responsibility: expose the model, preserve what happened, revise what failed, keep what remains supported, and leave the unknown open.
+
+This framing does **not** certify any particular historical interpretation. It is meant to remain usable even by someone who rejects the founder's application of the framework to a specific controversy.
+
+See [Why the Order of the Closed Loop Exists](PURPOSE.md) for the full project framing.
 
 ## The Founder's Equation
 
